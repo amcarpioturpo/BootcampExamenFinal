@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="example test suite" verbose="1">
+	<listeners>
+		<listener class-name="com.automation.web.listeners.Listener"/>
+	</listeners>
+
+	<parameter name="browser" value="chrome"/>
+	<parameter name="url" value="https://www.espn.com/?src=com&amp;_adblock=true"/>
+
+	<test name="Login Test">
+		<groups>
+			<run>
+				<include name="Register_and_LogOut"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.automation.web.tests.TestSuite"/>
+		</classes>
+	</test>
+
+	<test name="LogOut and Cancel_User Tests">
+		<groups>
+			<run>
+				<include name="Register_and_Wait"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.automation.web.tests.TestSuite"/>
+		</classes>
+	</test>
+
+</suite>
